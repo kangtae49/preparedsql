@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+<item name="DATABASES">
+<dsn>
+<![CDATA[
+Driver={MySQL ODBC 5.3 Unicode Driver};Server=ssd-master;Database=metastore_db;
+User=hive;Password=hive;Option=3;
+]]>
+</dsn>
+<sql>
+<body>
+<![CDATA[
+show databases;
+]]>
+</body>
+<search_where>
+<![CDATA[
+]]>
+</search_where>
+</sql>
+</item>
+<item name="TOP10">
+<dsn>
+<![CDATA[
+Driver={MySQL ODBC 5.3 Unicode Driver};Server=ssd-master;Database=metastore_db;
+User=hive;Password=hive;Option=3;
+]]>
+</dsn>
+<sql>
+<body>
+<![CDATA[
+select * from  %(search_where)s limit 10;
+]]>
+</body>
+<search_where>
+<![CDATA[
+%(word)s
+]]>
+</search_where>
+</sql>
+</item>
+<item name="DESC">
+<dsn>
+<![CDATA[
+Driver={MySQL ODBC 5.3 Unicode Driver};Server=ssd-master;Database=metastore_db;
+User=hive;Password=hive;Option=3;
+]]>
+</dsn>
+<sql>
+<body>
+<![CDATA[
+desc %(search_where)s
+]]>
+</body>
+<search_where>
+<![CDATA[
+%(word)s
+]]>
+</search_where>
+</sql>
+</item>
+<item name="TABLES">
+<dsn>
+<![CDATA[
+Driver={MySQL ODBC 5.3 Unicode Driver};Server=ssd-master;Database=metastore_db;
+User=hive;Password=hive;Option=3;
+]]>
+</dsn>
+<sql>
+<body>
+<![CDATA[
+show tables;
+]]>
+</body>
+<search_where>
+<![CDATA[
+]]>
+</search_where>
+</sql>
+</item>
+<item name="TEST">
+<dsn>
+<![CDATA[
+Driver={MySQL ODBC 5.3 Unicode Driver};Server=ssd-master;Database=metastore_db;
+User=hive;Password=hive;Option=3;
+]]>
+</dsn>
+<sql>
+<body>
+<![CDATA[
+SELECT 'hi' as k,  'val1' as v 
+union all
+SELECT 'hi2' as k,  'val2' as v 
+]]>
+</body>
+<search_where>
+<![CDATA[
+]]>
+</search_where>
+</sql>
+</item>
+</root>
